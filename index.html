@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>danfromweb | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <header class="navbar">
+    <h1>danfromweb</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="intro">Yo, I’m</p>
+      <h1 class="name">Dan Ahmed</h1>
+      <p class="role"></p>
+      <a href="#projects" class="cta">See My Work ↓</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="projects" class="section">
+      <h2 class="section-title">💻 Stuff I Made</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Password Generator</h3>
+          <p>Generate strong passwords and copy them easily.</p>
+          <div class="links">
+            <a href="https://password-generator-six-fawn.vercel.app/" target="_blank">Live</a>
+            <a href="https://github.com/DanDesignsWebsites/PasswordGenerator" target="_blank">Code</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>To-Do List</h3>
+          <p>Task tracker with check, delete functions.</p>
+          <div class="links">
+            <a href="https://to-do-list-cyan-phi-33.vercel.app/" target="_blank">Live</a>
+            <a href="https://github.com/DanDesignsWebsites/ToDoList" target="_blank">Code</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>GeoFetch</h3>
+          <p>Instantly get information about any country.</p>
+          <div class="links">
+            <a href="https://geo-fetch.vercel.app/" target="_blank">Live</a>
+            <a href="https://github.com/DanDesignsWebsites/GeoFetch" target="_blank">Code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title">🛠 Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Arduino</li>
+        <li>Game Dev (Godot)</li>
+      </ul>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">👾 About Me</h2>
+      <p>I’m Dan, a 14 y/o frontend developer from Egypt who builds websites, tools, and games. I don’t use heavy frameworks unless I need to — I try keep things clean, fast, and mine.</p>
+      <p>I also dabble a bit in Arduino and game dev (Godot). My work isn’t about being flashy — I just want to make useful things that function well and look decent doing it.</p>
+    </section>
+
+    <section id="pricing" class="section">
+      <h2 class="section-title">💸 Pricing</h2>
+      <p>I don’t really do strict pricing. I base what I charge on what I think is fair for the time, effort, and quality I put in. If you have a project or idea, let’s talk and figure out what works for both of us.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-title">📬 Contact Me</h2>
+      <form action="https://formsubmit.co/danfrontenddev@gmail.com" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="socials">
+        <a href="https://discord.com/users/984911309990678548" target="_blank">Discord</a>
+        <a href="https://github.com/DanDesignsWebsites" target="_blank">GitHub</a>
+        <a href="mailto:danfrontenddev@gmail.com">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Dan Ahmed. Built with raw HTML, CSS & JS.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
