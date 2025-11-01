@@ -53,7 +53,7 @@ animate();
 
 const roleEl = document.querySelector('.role');
 const roles = [
-  "Frontend Dev • Arduino Tinkerer • Game Maker • Egypt-based",
+  "Frontend Dev • Arduino Tinkerer • Game Maker • Egypt-based"
 ];
 let rIndex = 0, cIndex = 0, typing = false;
 
@@ -65,7 +65,6 @@ const roleObserver = new IntersectionObserver((entries, obs) => {
     }
   });
 }, { threshold: 0.5 });
-
 roleObserver.observe(roleEl);
 
 function typeRole() {
@@ -83,3 +82,45 @@ function typeRole() {
     }, 1400);
   }
 }
+
+const orbCount = 6;
+const orbCanvas = document.createElement('canvas');
+const orbCtx = orbCanvas.getContext('2d');
+orbCanvas.id = 'orbs';
+document.body.appendChild(orbCanvas);
+Object.assign(orbCanvas.style, {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  zIndex: '-1',
+  pointerEvents: 'none'
+});
+orbCanvas.width = innerWidth;
+orbCanvas.height = innerHeight;
+
+let orbs = Array.from({ length: orbCount }, () => ({
+  x: Math.random() * orbCanvas.width,
+  y: Math.random() * orbCanvas.height,
+  r: Math.random() * 120 + 60,
+  dx: (Math.random() - 0.5) * 0.3,
+  dy: (Math.random() - 0.5) * 0.3,
+  c: `rgba(${Math.floor(80 + Math.random()*80)}, ${Math.floor(100 + Math.random()*90)}, ${Math.floor(220 + Math.random()*35)}, 0.05)`
+}));
+
+function drawOrbs() {
+  orbCtx.clearRect(0, 0, orbCanvas.width, orbCanvas.height);
+  for (let orb of orbs) {
+    orbCtx.beginPath();
+    orbCtx.arc(orb.x, orb.y, orb.r, 0, Math.PI * 2);
+    orbCtx.fillStyle = orb.c;
+    orbCtx.fill();
+    orb.x += orb.dx;
+    orb.y += orb.dy;
+    if (orb.x < -200 || orb.x > orbCanvas.width + 200) orb.dx *= -1;
+    if (orb.y < -200 || orb.y > orbCanvas.height + 200) orb.dy *= -1;
+  }
+  requestAnimationFrame(drawOrbs);
+}
+drawOrbs();
